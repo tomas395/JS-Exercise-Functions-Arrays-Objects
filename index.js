@@ -82,11 +82,19 @@ function getName(personObject) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
  */
+// function makeSmartPerson(marty) {
+//   const person = {
+//     name: marty,
+//     sum: (num1, num2) => num1 + num2,
+//     speak: () => 'Hello my name is ' + this.name
+//   };
+//   return person;
+// };
 function makeSmartPerson(marty) {
   const person = {
     name: marty,
-    sum: (num1, num2) => num1 + num2,
-    speak: () => 'Hello my name is ' + this.name
+    sum: (num1,num2) => {return num1+num2;},
+    speak: () => {return 'Hello, my name is ' +person.name;}
   };
   return person;
 };
@@ -98,7 +106,6 @@ function makeSmartPerson(marty) {
 
 /*
 // ⭐️ Example Test Data ⭐️
-
 var inventory = [
   { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
   { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
@@ -151,7 +158,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  return `The car is a ${inventory[index].car_make} ${inventory[index].car_model}`;
 }
 
 /**
